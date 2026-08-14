@@ -831,6 +831,7 @@ body.dark .modal-content select {
         font-size: 16px;
     }
 
+
     .hero-card {
         width: 280px;
     }
@@ -858,4 +859,87 @@ body.dark .modal-content select {
     .stat-card h2 {
         font-size: 25px;
     }
+}
+/* ===== IMPROVED DARK MODE ===== */
+
+body.dark {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+/* Header */
+body.dark .header {
+    background: #111827;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+body.dark .logo,
+body.dark .navbar a {
+    color: #f8fafc;
+}
+
+/* Stats Section */
+body.dark .stats {
+    background: #111827;
+}
+
+body.dark .stat-card {
+    background: #1e293b;
+}
+
+/* Cards */
+body.dark .event-card,
+body.dark .match-box,
+body.dark .modal-content,
+body.dark .hero-card,
+body.dark .dashboard-event {
+    background: #1e293b;
+    color: #f8fafc;
+    border-color: #334155;
+}
+
+/* Inputs */
+body.dark input,
+body.dark select {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #334155;
+}
+
+/* Dashboard */
+body.dark .dashboard-section,
+body.dark .dashboard-card,
+body.dark .dashboard-list {
+    background: #111827;
+}
+
+/* Match Result */
+body.dark .match-result-card {
+    background: #1e293b;
+}
+
+/* Buttons */
+body.dark .secondary-btn,
+body.dark .save-btn,
+body.dark .filter-btn {
+    background: #1e293b;
+    color: white;
+    border-color: #334155;
+}
+
+/* Footer */
+body.dark .footer {
+    background: #020617;
+}
+
+/* Text Colors */
+body.dark p,
+body.dark span,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+    color: inherit;
 }

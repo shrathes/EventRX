@@ -1,605 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>EventX - Smart Campus Event Hub</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+    <!-- ================= HEADER ================= -->
+    <header class="header">
 
-<header class="header">
-
-    <div class="logo">
-        Event<span>X</span>
-    </div>
-
-    <nav class="navbar">
-
-        <a href="#home">Home</a>
-
-        <a href="#events">Events</a>
-
-        <a href="#match">Find My Match</a>
-
-        <a href="#my-events">My Events</a>
-
-    </nav>
-
-    <button id="darkModeBtn"
-            class="dark-mode-btn"
-            type="button">
-        🌙
-    </button>
-
-</header>
-
-
-<!-- =====================================================
-     HERO SECTION
-===================================================== -->
-
-<section id="home" class="hero">
-
-    <div class="hero-content">
-
-        <p class="eyebrow">
-            🚀 SMART CAMPUS EVENT HUB
-        </p>
-
-        <h1>
-            Discover Your Next
-            <span>Tech Opportunity</span>
-        </h1>
-
-        <p class="hero-text">
-            Find hackathons, workshops, competitions and
-            technical events that match your interests.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#events"
-               class="btn primary-btn">
-                🚀 Explore Events
-            </a>
-
-            <a href="#match"
-               class="btn secondary-btn">
-                ✨ Find My Match
-            </a>
-
+        <div class="logo">
+            <span>Event</span>X
         </div>
 
-    </div>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#match">Find My Match</a>
+            <a href="#dashboard">My Events</a>
+        </nav>
 
+        <button id="darkModeBtn" class="dark-btn">🌙</button>
 
-    <div class="hero-card">
+    </header>
 
-        <div class="hero-icon">
-            💡
-        </div>
 
-        <h2>
-            Find. Register. Grow.
-        </h2>
+    <!-- ================= HOME / HERO ================= -->
+    <section id="home" class="hero">
 
-        <p>
-            Your next opportunity is waiting.
-        </p>
+        <div class="hero-content">
 
-    </div>
+            <p class="hero-small">🚀 SMART CAMPUS EVENT HUB</p>
 
-</section>
+            <h1>
+                Discover Your
+                <span>Next Tech Opportunity</span>
+            </h1>
 
+            <p>
+                Find hackathons, workshops, competitions and
+                technical events that match your interests.
+            </p>
 
+            <div class="hero-buttons">
+                <a href="#events" class="btn primary-btn">
+                    Explore Events
+                </a>
 
-<!-- =====================================================
-     EVENTS SECTION
-===================================================== -->
-
-<section id="events" class="section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            📅 DISCOVER
-        </p>
-
-        <h2>
-            Upcoming Tech Events
-        </h2>
-
-        <p>
-            Explore exciting opportunities happening
-            around your campus.
-        </p>
-
-    </div>
-
-
-    <!-- SEARCH -->
-
-    <div class="search-area">
-
-        <input
-            type="text"
-            id="search"
-            placeholder="🔍 Search events by name..."
-            oninput="searchEvents()"
-        >
-
-    </div>
-
-
-    <!-- FILTER BUTTONS -->
-
-    <div class="filters">
-
-        <button
-            type="button"
-            class="filter-btn active"
-            onclick="filterEvents('All')">
-            All
-        </button>
-
-        <button
-            type="button"
-            class="filter-btn"
-            onclick="filterEvents('AI/ML')">
-            🤖 AI / ML
-        </button>
-
-        <button
-            type="button"
-            class="filter-btn"
-            onclick="filterEvents('Web')">
-            💻 Web
-        </button>
-
-        <button
-            type="button"
-            class="filter-btn"
-            onclick="filterEvents('Cybersecurity')">
-            🔐 Cybersecurity
-        </button>
-
-        <button
-            type="button"
-            class="filter-btn"
-            onclick="filterEvents('Robotics')">
-            🤖 Robotics
-        </button>
-
-        <button
-            type="button"
-            class="filter-btn"
-            onclick="filterEvents('Hackathon')">
-            🏆 Hackathons
-        </button>
-
-        <button
-            type="button"
-            class="filter-btn"
-            onclick="filterEvents('Electronics')">
-            ⚡ Electronics
-        </button>
-
-    </div>
-
-
-    <!-- EVENT CARDS ARE INSERTED HERE BY JAVASCRIPT -->
-
-    <div
-        id="eventsContainer"
-        class="events-grid">
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SMART MATCH SECTION
-===================================================== -->
-
-<section id="match" class="section match-section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            ✨ SMART FEATURE
-        </p>
-
-        <h2>
-            Find My Event Match
-        </h2>
-
-        <p>
-            Tell us your interests and we'll recommend
-            the best events for you.
-        </p>
-
-    </div>
-
-
-    <div class="match-card">
-
-        <h2>
-            What are you interested in?
-        </h2>
-
-
-        <div class="interest-options">
-
-            <label class="interest-option">
-
-                <input
-                    type="checkbox"
-                    value="AI/ML">
-
-                🤖 AI / ML
-
-            </label>
-
-
-            <label class="interest-option">
-
-                <input
-                    type="checkbox"
-                    value="Web">
-
-                🌐 Web Development
-
-            </label>
-
-
-            <label class="interest-option">
-
-                <input
-                    type="checkbox"
-                    value="Cybersecurity">
-
-                🔐 Cybersecurity
-
-            </label>
-
-
-            <label class="interest-option">
-
-                <input
-                    type="checkbox"
-                    value="Hackathon">
-
-                🏆 Hackathons
-
-            </label>
-
-
-            <label class="interest-option">
-
-                <input
-                    type="checkbox"
-                    value="Robotics">
-
-                🤖 Robotics
-
-            </label>
-
-
-            <label class="interest-option">
-
-                <input
-                    type="checkbox"
-                    value="Electronics">
-
-                ⚡ Electronics
-
-            </label>
-
-        </div>
-
-
-        <button
-            type="button"
-            class="btn primary-btn match-button"
-            onclick="findMatch()">
-
-            ✨ Find My Best Match
-
-        </button>
-
-
-        <!-- IMPORTANT:
-             JavaScript displays the result here -->
-
-        <div id="matchResult"></div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MY EVENTS DASHBOARD
-===================================================== -->
-
-<section id="my-events" class="section dashboard-section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            👤 YOUR DASHBOARD
-        </p>
-
-        <h2>
-            My Events
-        </h2>
-
-        <p>
-            Manage your saved and registered events.
-        </p>
-
-    </div>
-
-
-    <!-- STAT CARDS -->
-
-    <div class="stats-grid">
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                📝
+                <a href="#match" class="btn secondary-btn">
+                    ✨ Find My Match
+                </a>
             </div>
 
-            <h3 id="registeredCount">
-                0
-            </h3>
-
-            <p>
-                Registered Events
-            </p>
-
         </div>
 
+        <div class="hero-image">
+            <div class="hero-card">
+                <div class="hero-icon">💡</div>
+                <h3>Find. Register. Grow.</h3>
+                <p>Your next opportunity is waiting.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUICK STATS ================= -->
+    <section class="stats">
 
         <div class="stat-card">
-
-            <div class="stat-icon">
-                ❤️
-            </div>
-
-            <h3 id="savedCount">
-                0
-            </h3>
-
-            <p>
-                Saved Events
-            </p>
-
+            <h2>20+</h2>
+            <p>Tech Events</p>
         </div>
-
 
         <div class="stat-card">
+            <h2>8</h2>
+            <p>Categories</p>
+        </div>
 
-            <div class="stat-icon">
-                🚀
-            </div>
+        <div class="stat-card">
+            <h2>500+</h2>
+            <p>Students</p>
+        </div>
 
-            <h3 id="upcomingCount">
-                0
-            </h3>
+        <div class="stat-card">
+            <h2>95%</h2>
+            <p>Best Match</p>
+        </div>
 
-            <p>
-                Upcoming Events
-            </p>
+    </section>
+
+
+    <!-- ================= EVENTS ================= -->
+    <section id="events" class="events-section">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>Upcoming Tech Events 🔥</h2>
+
+            <span>
+                Discover events and find the right opportunity for you.
+            </span>
 
         </div>
 
-    </div>
 
-
-
-    <!-- REGISTERED EVENTS -->
-
-    <div class="dashboard-box">
-
-        <h2>
-            📝 My Registrations
-        </h2>
-
-        <div id="registeredEvents">
-
-            <p>
-                You haven't registered for any events yet.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- SAVED EVENTS -->
-
-    <div class="dashboard-box">
-
-        <h2>
-            ❤️ Saved Events
-        </h2>
-
-        <div id="savedEvents">
-
-            <p>
-                You haven't saved any events yet.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     REGISTRATION MODAL
-===================================================== -->
-
-<div
-    id="registrationModal"
-    class="modal">
-
-    <div class="modal-content">
-
-        <button
-            type="button"
-            class="close-btn"
-            onclick="closeRegistration()">
-            ×
-        </button>
-
-
-        <p class="eyebrow">
-            📝 EVENT REGISTRATION
-        </p>
-
-
-        <h2>
-            Register for Event
-        </h2>
-
-
-        <p id="selectedEvent">
-            Select your event
-        </p>
-
-
-        <form
-            id="registrationForm"
-            onsubmit="registerUser(event)">
-
-
-            <!-- NAME -->
-
-            <label for="name">
-                Full Name
-            </label>
+        <!-- SEARCH -->
+        <div class="search-area">
 
             <input
                 type="text"
-                id="name"
-                placeholder="Enter your full name"
-                required
+                id="search"
+                placeholder="🔍 Search events by name..."
+                onkeyup="searchEvents()"
             >
 
-
-            <!-- EMAIL -->
-
-            <label for="email">
-                Email
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-            >
+        </div>
 
 
-            <!-- COLLEGE -->
+        <!-- CATEGORY FILTER -->
+        <div class="filters">
 
-            <label for="college">
-                College
-            </label>
-
-            <input
-                type="text"
-                id="college"
-                placeholder="Enter your college"
-                required
-            >
-
-
-            <!-- EVENT -->
-
-            <label for="eventSelect">
-                Select Event
-            </label>
-
-            <select
-                id="eventSelect"
-                required>
-            </select>
-
-
-            <button
-                type="submit"
-                class="btn primary-btn">
-
-                🚀 Complete Registration
-
+            <button class="filter-btn active" onclick="filterEvents('All')">
+                All
             </button>
 
+            <button class="filter-btn" onclick="filterEvents('AI/ML')">
+                🤖 AI / ML
+            </button>
 
-            <!-- SUCCESS / ERROR MESSAGE -->
+            <button class="filter-btn" onclick="filterEvents('Web')">
+                💻 Web
+            </button>
 
-            <div
-                id="registrationMessage">
+            <button class="filter-btn" onclick="filterEvents('Cybersecurity')">
+                🔐 Cybersecurity
+            </button>
+
+            <button class="filter-btn" onclick="filterEvents('Hackathon')">
+                🏆 Hackathon
+            </button>
+
+            <button class="filter-btn" onclick="filterEvents('Robotics')">
+                🤖 Robotics
+            </button>
+
+            <button class="filter-btn" onclick="filterEvents('Electronics')">
+                ⚡ Electronics
+            </button>
+
+        </div>
+
+
+        <!-- EVENT CARDS WILL COME HERE -->
+        <div id="eventsContainer" class="events-container">
+
+            <!-- JavaScript will automatically add events here -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FIND MY MATCH ================= -->
+    <section id="match" class="match-section">
+
+        <div class="section-heading">
+
+            <p>SMART FEATURE</p>
+
+            <h2>✨ Find My Event Match</h2>
+
+            <span>
+                Tell us your interests and we'll recommend the best events.
+            </span>
+
+        </div>
+
+
+        <div class="match-box">
+
+            <h3>What are you interested in?</h3>
+
+            <div class="interest-options">
+
+                <label>
+                    <input type="checkbox" value="AI/ML">
+                    🤖 AI / ML
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Web">
+                    💻 Web Development
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Cybersecurity">
+                    🔐 Cybersecurity
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Hackathon">
+                    🏆 Hackathons
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Robotics">
+                    🤖 Robotics
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Electronics">
+                    ⚡ Electronics
+                </label>
+
             </div>
 
-        </form>
+            <button class="btn primary-btn" onclick="findMatch()">
+                ✨ Find My Best Match
+            </button>
+
+            <div id="matchResult" class="match-result">
+                <!-- Result will appear here -->
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTRATION MODAL ================= -->
+    <div id="registrationModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" onclick="closeRegistration()">
+                ×
+            </button>
+
+            <h2>Register for Event 📝</h2>
+
+            <p id="selectedEvent">
+                Event Name
+            </p>
+
+
+            <form id="registrationForm" onsubmit="registerUser(event)">
+
+                <label for="name">Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                >
+
+
+                <label for="email">Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+
+
+                <label for="college">College</label>
+
+                <input
+                    type="text"
+                    id="college"
+                    placeholder="Enter your college"
+                >
+
+
+                <label for="eventSelect">Select Event</label>
+
+                <select id="eventSelect">
+
+                    <option value="">
+                        Select an event
+                    </option>
+
+                </select>
+
+
+                <button type="submit" class="btn primary-btn">
+                    Register Now 🚀
+                </button>
+
+            </form>
+
+            <div id="registrationMessage"></div>
+
+        </div>
 
     </div>
 
-</div>
+
+    <!-- ================= DASHBOARD ================= -->
+    <section id="dashboard" class="dashboard-section">
+
+        <div class="section-heading">
+
+            <p>YOUR SPACE</p>
+
+            <h2>My Event Dashboard 👤</h2>
+
+            <span>
+                Manage your saved and registered events.
+            </span>
+
+        </div>
 
 
+        <!-- DASHBOARD STATS -->
+        <div class="dashboard-stats">
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+            <div class="dashboard-card">
 
-<footer class="footer">
+                <div class="dashboard-icon">📝</div>
 
-    <div class="footer-logo">
-        EventX
-    </div>
+                <h2 id="registeredCount">0</h2>
 
-    <p>
-        Smart Campus Event Hub
-    </p>
+                <p>Registered Events</p>
 
-    <p>
-        Discover. Register. Grow.
-    </p>
-
-    <p class="copyright">
-        © 2026 EventX. Built for CodeForge WebSprint.
-    </p>
-
-</footer>
+            </div>
 
 
+            <div class="dashboard-card">
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+                <div class="dashboard-icon">❤️</div>
 
-<script src="main.js"></script>
+                <h2 id="savedCount">0</h2>
+
+                <p>Saved Events</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">⏳</div>
+
+                <h2 id="upcomingCount">0</h2>
+
+                <p>Upcoming Events</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- REGISTERED EVENTS -->
+        <div class="dashboard-list">
+
+            <h3>📝 My Registered Events</h3>
+
+            <div id="registeredEvents">
+
+                <p class="empty-message">
+                    You haven't registered for any events yet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SAVED EVENTS -->
+        <div class="dashboard-list">
+
+            <h3>❤️ Saved Events</h3>
+
+            <div id="savedEvents">
+
+                <p class="empty-message">
+                    You haven't saved any events yet.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="logo">
+            <span>Event</span>X
+        </div>
+
+        <p>
+            Your smart campus event companion 🚀
+        </p>
+
+        <p>
+            © 2026 EventX. Built with HTML, CSS & JavaScript.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="main.js"></script>
 
 </body>
 </html>
