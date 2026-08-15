@@ -142,8 +142,13 @@ EventX/
     ├── dashboard.png
     ├── desktop_responsive.png
     ├── events.png
+    ├── localstorage.png
     ├── match.png
-    └── registration.png
+    ├── phone_responsive.png
+    ├── registration.png
+        
+        
+
 ```
 
 ---
