@@ -138,7 +138,7 @@ EventX/
 ├── README.md
 │
 └── screenshots/
-    ├── home.png
+    ├── desktop_responsive.png
     ├── events.png
     ├── registration.png
     ├── match.png
