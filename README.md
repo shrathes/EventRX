@@ -266,3 +266,5 @@ Possible future improvements include:
 ## 📄 License
 
 This project was created as a student project for learning, development, and hackathon purposes.
+### Netlify Link:
+https://melodious-banoffee-3d069e.netlify.app
