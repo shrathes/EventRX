@@ -138,12 +138,12 @@ EventX/
 ├── README.md
 │
 └── screenshots/
+    ├── darkmode.png
+    ├── dashboard.png
     ├── desktop_responsive.png
     ├── events.png
-    ├── registration.png
     ├── match.png
-    ├── dashboard.png
-    └── darkmode.png
+    └── registration.png
 ```
 
 ---
